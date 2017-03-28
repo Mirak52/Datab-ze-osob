@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Databáze_osob
 {
     /// <summary>
@@ -23,6 +24,7 @@ namespace Databáze_osob
     {
         public bool decision = true;
         public int test = 0;
+        public string pohlavi = "Man";
         public MainWindow()
         {
             InitializeComponent();
@@ -73,9 +75,8 @@ namespace Databáze_osob
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            var itemsFromDb = Database.GetItemsNotDoneAsync().Result;
             Database.QueryCustom();
-            ToDoItemsListView.ItemsSource = itemsFromDb;
+            show();
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -105,20 +106,26 @@ namespace Databáze_osob
                     DateTime datumCas = DateTime.Now;
                     item.Date = datumCas;
 
-                    item.Sex = Man.Content.ToString();
+                    item.Sex = pohlavi;
                     item.Done = 0;
                     Database.SaveItemAsync(item);
-                    var itemsFromDb = Database.GetItemsNotDoneAsync().Result;
+
+                    show();
                     
-                    ItemsCount.Content = "Items in Database " + itemsFromDb.Count;
-                    ToDoItemsListView.ItemsSource = itemsFromDb;
-                    Text.Content = "Uloženo";
+                   
+
                 }
                 else
                 {
                     Text.Content = "LifeNumber inst number";
                 }
             }
+        }
+        private void show()
+        {
+            var itemsFromDb = Database.GetItemsNotDoneAsync().Result;
+            ItemsCount.Content = "Items in Database " + itemsFromDb.Count;
+            ToDoItemsListView.ItemsSource = itemsFromDb;
         }
         private void click(object sender, SelectionChangedEventArgs e)
         {
@@ -129,39 +136,21 @@ namespace Databáze_osob
             this.Close();
 
         }
-        private void FirstName_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (decision)
-            {
-                FirstName.Text = "";
-                decision = false;
-            }
-            else
-            { decision = true; }
-        }
-
-        private void LastName_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (decision)
-            {
-                LastName.Text = "";
-                decision = false;
-            }
-            else
-            { decision = true; }
-        }
-
-        private void LifeNumber_OnPreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (decision)
-            {
-                LifeNumber.Text = "";
-                decision = false;
-            }
-            else
-            { decision = true; }
-        }
-
      
+
+        private void Man_Checked(object sender, RoutedEventArgs e)
+        {
+            pohlavi = "Man";
+        }
+
+        private void Women_Checked(object sender, RoutedEventArgs e)
+        {
+            pohlavi = "Women";
+        }
+
+        private void Another_Checked(object sender, RoutedEventArgs e)
+        {
+            pohlavi = "Another";
+        }
     }
 }

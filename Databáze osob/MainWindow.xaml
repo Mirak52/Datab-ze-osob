@@ -7,8 +7,8 @@
         mc:Ignorable="d"
   
          WindowState="Maximized"
-        Title="MainWindow" MinHeight="768" MinWidth="1366" >
-    <Grid>
+        Title="MainWindow" d:DesignHeight="1080"  d:DesignWidth="1920" >
+    <Grid >
         <StackPanel Margin="0,42,0,0">
             <Label x:Name="ItemsCount"></Label>
             <ListView x:Name="ToDoItemsListView" SelectionChanged="click"></ListView>
@@ -16,15 +16,15 @@
         </StackPanel>
         <Button x:Name="Clear" Content="Clear" HorizontalAlignment="Left" Margin="20,17,0,0" VerticalAlignment="Top" Width="75" Height="23"  Click="Clear_Click"/>
         <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="110,17,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Add_Click"/>
-        <TextBox x:Name="FirstName" PreviewMouseDown="FirstName_OnPreviewMouseDown" HorizontalAlignment="Left" Height="23" Margin="200,17,0,0" TextWrapping="Wrap" Text="Vlož jméno" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="LastName" PreviewMouseDown="LastName_OnPreviewMouseDown" HorizontalAlignment="Left" Height="23" Margin="325,17,0,0" TextWrapping="Wrap" Text="Vlož příjmení" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="LifeNumber" PreviewMouseDown="LifeNumber_OnPreviewMouseDown" HorizontalAlignment="Left" Height="23" Margin="450,17,0,0" TextWrapping="Wrap" Text="Vlož rodné číslo" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="FirstName" HorizontalAlignment="Left" Height="23" Margin="200,17,0,0" TextWrapping="Wrap" Text="Vlož jméno" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="LastName"  HorizontalAlignment="Left" Height="23" Margin="325,17,0,0" TextWrapping="Wrap" Text="Vlož příjmení" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="LifeNumber"    HorizontalAlignment="Left" Height="23" Margin="450,17,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <Label x:Name="Text" Content="" FontSize="30" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top"/>
-        
-        
-            <RadioButton x:Name="Man" Content="Man" HorizontalAlignment="Center" Margin="470,17,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="Women" Content="Woman" HorizontalAlignment="Center" Margin="570,17,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="Another" Content="Another" HorizontalAlignment="Center" Margin="700,18,0,0" VerticalAlignment="Top" />
+
+
+            <RadioButton x:Name="Man" Checked="Man_Checked" Content="Man" HorizontalAlignment="Center" Margin="-550,17,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="Women" Checked="Women_Checked" Content="Woman" HorizontalAlignment="Center" Margin="-350,17,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="Another" Checked="Another_Checked" Content="Another" HorizontalAlignment="Center" Margin="-150,17,0,0" VerticalAlignment="Top" />
 
 
          </Grid>
