@@ -1,0 +1,21 @@
+﻿<Window x:Class="Databáze_osob.Detail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Databáze_osob"
+        mc:Ignorable="d"
+        
+           WindowState="Maximized"
+        Title="Detail" MinHeight="768" MinWidth="1366" >
+    <Grid>
+        <Label x:Name="label" FontSize="50" Content="Detail uživatele" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="detail" Content="Label" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="back" FontSize="20" Content="Zpět" HorizontalAlignment="center" Margin="0,301,0,0" VerticalAlignment="Top" Width="80" Click="back_Click"/>
+        <Button x:Name="delete" FontSize="20" Content="Smazat" HorizontalAlignment="Center" Margin="100,232,0,0" VerticalAlignment="Top" Width="80" Click="delete_Click"/>
+        <Button x:Name="change" FontSize="20" Content="Upravit" HorizontalAlignment="Center" Margin="-100,232,0,0" VerticalAlignment="Top" Width="80" Click="change_Click"/>
+        <TextBox x:Name="namech" PreviewMouseDown="enter" HorizontalAlignment="Center" Height="23" Margin="-150,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Změna jména"/>
+        <TextBox x:Name="textch" PreviewMouseDown="enter1" HorizontalAlignment="Center" Height="23" Margin="150,194,0,0" TextWrapping="Wrap" Text="Změna textu" VerticalAlignment="Top" Width="120" />
+
+    </Grid>
+</Window>
