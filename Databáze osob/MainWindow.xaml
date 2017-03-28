@@ -24,7 +24,7 @@
         
             <RadioButton x:Name="Man" Content="Man" HorizontalAlignment="Center" Margin="470,17,0,0" VerticalAlignment="Top"/>
             <RadioButton x:Name="Women" Content="Woman" HorizontalAlignment="Center" Margin="570,17,0,0" VerticalAlignment="Top"/>
-            <RadioButton x:Name="Another" Content="Another" HorizontalAlignment="Center" Margin="700,17,0,0" VerticalAlignment="Top" />
+            <RadioButton x:Name="Another" Content="Another" HorizontalAlignment="Center" Margin="700,18,0,0" VerticalAlignment="Top" />
 
 
          </Grid>
